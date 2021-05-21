@@ -1,6 +1,7 @@
 package Proyecto;
 
 import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -8,9 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PanelCoctelesYTapas {
-    public final static JPanel panel=new JPanel();
+    public final JPanel panel;
     List<BotonCoctelesYTapas> botones;
     PanelCoctelesYTapas() throws IOException {
+        panel=new JPanel();
         botones=new ArrayList<>();
         rellenaBotonesDeFichero();
         for (BotonCoctelesYTapas b:botones) {
@@ -33,6 +35,7 @@ public class PanelCoctelesYTapas {
 
     public static void main(String[] args) throws IOException {
         JFrame ventana=new JFrame("Miami Beach");
+
         ventana.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         PanelCoctelesYTapas cocteles=new PanelCoctelesYTapas();
