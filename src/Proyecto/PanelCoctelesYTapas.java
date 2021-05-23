@@ -33,6 +33,7 @@ public class PanelCoctelesYTapas {
         return panel;
     }
 
+
     public static void main(String[] args) throws IOException {
         JFrame ventana=new JFrame("Miami Beach");
 

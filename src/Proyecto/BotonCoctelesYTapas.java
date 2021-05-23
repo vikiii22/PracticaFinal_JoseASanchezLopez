@@ -1,12 +1,13 @@
 package Proyecto;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class BotonCoctelesYTapas {
     public JButton getBoton(){
         return boton;
     }
-    
+
     private final String nombre;
     private JButton boton;
     private final int cantidad;
