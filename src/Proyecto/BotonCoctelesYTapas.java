@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BotonCoctelesYTapas {
+    Ticket t=new Ticket();
     public JButton getBoton(){
         return boton;
     }

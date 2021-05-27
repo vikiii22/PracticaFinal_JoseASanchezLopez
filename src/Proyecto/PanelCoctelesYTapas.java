@@ -34,14 +34,17 @@ public class PanelCoctelesYTapas {
     }
 
 
+
     public static void main(String[] args) throws IOException {
         JFrame ventana=new JFrame("Miami Beach");
-
+        Ticket t=new Ticket();
         ventana.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         PanelCoctelesYTapas cocteles=new PanelCoctelesYTapas();
 
         ventana.add(cocteles.getPanel());
+        ventana.setLayout(new GridLayout(1,2));
+        ventana.add(t.getTexto());
 
         ventana.pack();
         ventana.setLocationRelativeTo(null);
