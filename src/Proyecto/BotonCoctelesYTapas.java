@@ -4,10 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BotonCoctelesYTapas {
-    Ticket t=new Ticket();
+    Ticket ticket=new Ticket();
     public JButton getBoton(){
         return boton;
     }
+
 
     private final String nombre;
     private JButton boton;
@@ -27,5 +28,6 @@ public class BotonCoctelesYTapas {
         this.cantidad=cantidad;
 
         boton.addActionListener(e-> System.out.println(cantidad));
+        //boton.addActionListener(e -> ticket.texto.setText(""+cantidad));
     }
 }
