@@ -1,6 +1,7 @@
 package Proyecto;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -13,6 +14,7 @@ public class PanelCoctelesYTapas {
     List<BotonCoctelesYTapas> botones;
     PanelCoctelesYTapas() throws IOException {
         panel=new JPanel();
+        panel.setLayout(new GridLayout(2,3));
         botones=new ArrayList<>();
         rellenaBotonesDeFichero();
         for (BotonCoctelesYTapas b:botones) {

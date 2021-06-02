@@ -1,6 +1,7 @@
 package Proyecto;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 public class BotonCoctelesYTapas {
@@ -24,10 +25,12 @@ public class BotonCoctelesYTapas {
 
     public BotonCoctelesYTapas(String nombre, int cantidad){
         boton=new JButton(nombre);
+        //boton
         this.nombre=nombre;
         this.cantidad=cantidad;
 
+        int precio=cantidad;
         boton.addActionListener(e-> System.out.println(cantidad));
-        //boton.addActionListener(e -> ticket.texto.setText(""+cantidad));
+        boton.addActionListener(e -> ticket.texto.setText(nombre));
     }
 }
