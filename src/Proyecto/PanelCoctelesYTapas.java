@@ -1,6 +1,7 @@
 package Proyecto;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -46,6 +47,12 @@ public class PanelCoctelesYTapas {
 
         ventana.add(cocteles.getPanel());
         ventana.setLayout(new GridLayout(1,2));
+
+        JPanel panel=new JPanel(new BorderLayout());
+        JButton total=new JButton("Total");;
+        total.setPreferredSize(new Dimension(120,70));
+        panel.add(total, BorderLayout.SOUTH);
+        ventana.add(panel);
         ventana.add(t.getPanel());
 
         ventana.pack();

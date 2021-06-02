@@ -11,8 +11,8 @@ public class Ticket extends JFrame{
     Map<String, Integer> tickets;
     public Ticket(){
         panel=new JPanel();
-        texto=new JTextArea(25,25);
-        texto.setSize(30,20);
+        texto=new JTextArea(30,30);
+        texto.setSize(30,30);
         texto.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         tickets=new TreeMap<>();
         panel.add(texto);
