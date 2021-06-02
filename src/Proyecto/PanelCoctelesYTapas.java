@@ -3,6 +3,7 @@ package Proyecto;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -14,7 +15,7 @@ public class PanelCoctelesYTapas {
     List<BotonCoctelesYTapas> botones;
     PanelCoctelesYTapas() throws IOException {
         panel=new JPanel();
-        panel.setLayout(new GridLayout(2,3));
+        panel.setLayout(new GridLayout(4,3));
         botones=new ArrayList<>();
         rellenaBotonesDeFichero();
         for (BotonCoctelesYTapas b:botones) {
@@ -28,14 +29,13 @@ public class PanelCoctelesYTapas {
             String[] campos=s.split(":");
             BotonCoctelesYTapas nuevo=new BotonCoctelesYTapas(campos[0], Integer.parseInt(campos[1]));
             botones.add(nuevo);
+            nuevo.ticket.getTexto();
         }
     }
 
     public JPanel getPanel(){
         return panel;
     }
-
-
 
     public static void main(String[] args) throws IOException {
         JFrame ventana=new JFrame("Miami Beach");
@@ -46,7 +46,7 @@ public class PanelCoctelesYTapas {
 
         ventana.add(cocteles.getPanel());
         ventana.setLayout(new GridLayout(1,2));
-        ventana.add(t.getTexto());
+        ventana.add(t.getPanel());
 
         ventana.pack();
         ventana.setLocationRelativeTo(null);
