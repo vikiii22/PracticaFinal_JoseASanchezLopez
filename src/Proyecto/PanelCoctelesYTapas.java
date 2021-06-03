@@ -30,9 +30,9 @@ public class PanelCoctelesYTapas {
             String[] campos=s.split(":");
             BotonCoctelesYTapas nuevo=new BotonCoctelesYTapas(campos[0], Integer.parseInt(campos[1]));
             botones.add(nuevo);
-            nuevo.ticket.getTexto();
         }
     }
+
 
     public JPanel getPanel(){
         return panel;
@@ -40,7 +40,7 @@ public class PanelCoctelesYTapas {
 
     public static void main(String[] args) throws IOException {
         JFrame ventana=new JFrame("Miami Beach");
-        Ticket t=new Ticket();
+        Ticket ticket=new Ticket();
         ventana.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         PanelCoctelesYTapas cocteles=new PanelCoctelesYTapas();
@@ -48,12 +48,17 @@ public class PanelCoctelesYTapas {
         ventana.add(cocteles.getPanel());
         ventana.setLayout(new GridLayout(1,2));
 
-        JPanel panel=new JPanel(new BorderLayout());
+        //Botón de total
+        JPanel panelBoton=new JPanel(new BorderLayout());
         JButton total=new JButton("Total");;
         total.setPreferredSize(new Dimension(120,70));
-        panel.add(total, BorderLayout.SOUTH);
-        ventana.add(panel);
-        ventana.add(t.getPanel());
+        total.setBackground(Color.GRAY);
+        panelBoton.add(total, BorderLayout.SOUTH);
+        ventana.add(panelBoton);
+
+        //Añadir el panel del ticket
+        //ventana.add(ticket.getPanel());
+        panelBoton.add(ticket.getPanel());
 
         ventana.pack();
         ventana.setLocationRelativeTo(null);

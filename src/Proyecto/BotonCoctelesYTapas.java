@@ -3,6 +3,8 @@ package Proyecto;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class BotonCoctelesYTapas {
     Ticket ticket=new Ticket();
@@ -31,5 +33,6 @@ public class BotonCoctelesYTapas {
         int precio=cantidad;
         //boton.addActionListener(e-> System.out.println(nombre + " " +cantidad));
         boton.addActionListener(e -> ticket.anaydeTicket(nombre, cantidad));
+        //boton.addActionListener(e -> ticket.texto.setText(nombre +""+cantidad));
     }
 }
