@@ -2,7 +2,6 @@ package Proyecto;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -15,9 +14,9 @@ public class Ticket extends JFrame{
         texto=new JTextArea(30,30);
         texto.setSize(30,30);
         texto.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+        this.panel.add(texto);
         tickets=new TreeMap<>();
         //Ticket t=new Ticket();
-        panel.add(texto);
     }
 
     public JTextArea getTexto(){
@@ -37,22 +36,13 @@ public class Ticket extends JFrame{
         actualizar();
     }
 
-    public void actualizar() {
+    private void actualizar() {
         String salida=" ";
         for (Map.Entry<String, Integer>tapas:tickets.entrySet()) {
             salida+=tapas.getKey()+" "+tapas.getValue()+"\n";
         }
-        texto.setText("salida");
+        texto.setText(salida);
+        //Aquí imprimo la salida para ver si está funcionando
         System.out.println(salida);
     }
-
-   /* public static void main(String[] args) {
-        Ticket ventana=new Ticket();
-
-        ventana.setDefaultCloseOperation(EXIT_ON_CLOSE);
-
-        ventana.pack();
-        ventana.setLocationRelativeTo(null);
-        ventana.setVisible(true);
-    }*/
 }

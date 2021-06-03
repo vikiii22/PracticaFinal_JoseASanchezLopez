@@ -41,6 +41,7 @@ public class PanelCoctelesYTapas {
     public static void main(String[] args) throws IOException {
         JFrame ventana=new JFrame("Miami Beach");
         Ticket ticket=new Ticket();
+        BotonTotal boton=new BotonTotal();
         ventana.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         PanelCoctelesYTapas cocteles=new PanelCoctelesYTapas();
@@ -50,14 +51,10 @@ public class PanelCoctelesYTapas {
 
         //Botón de total
         JPanel panelBoton=new JPanel(new BorderLayout());
-        JButton total=new JButton("Total");;
-        total.setPreferredSize(new Dimension(120,70));
-        total.setBackground(Color.GRAY);
-        panelBoton.add(total, BorderLayout.SOUTH);
+        panelBoton.add(boton.getPanel(), BorderLayout.SOUTH);
         ventana.add(panelBoton);
 
         //Añadir el panel del ticket
-        //ventana.add(ticket.getPanel());
         panelBoton.add(ticket.getPanel());
 
         ventana.pack();
