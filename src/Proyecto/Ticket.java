@@ -39,7 +39,7 @@ public class Ticket extends JFrame{
     private void actualizar() {
         String salida=" ";
         for (Map.Entry<String, Integer>tapas:tickets.entrySet()) {
-            salida+=tapas.getKey()+" "+tapas.getValue()+"\n";
+            salida+=tapas.getKey()+": "+tapas.getValue()+"€\n";
         }
         texto.setText(salida);
         //Aquí imprimo la salida para ver si está funcionando
