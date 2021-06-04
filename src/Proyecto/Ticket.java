@@ -13,6 +13,8 @@ public class Ticket extends JFrame{
         panel=new JPanel();
         texto=new JTextArea(30,30);
         texto.setSize(30,30);
+        Font fuente=new Font("Calibri", 1, 30);
+        texto.setFont(fuente);
         texto.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         this.panel.add(texto);
         tickets=new TreeMap<>();

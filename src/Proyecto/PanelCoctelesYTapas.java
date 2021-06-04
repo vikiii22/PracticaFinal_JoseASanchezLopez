@@ -14,13 +14,16 @@ import java.util.List;
 public class PanelCoctelesYTapas {
     public final JPanel panel;
     List<BotonCoctelesYTapas> botones;
-    PanelCoctelesYTapas() throws IOException {
+    Ticket ticket;
+    PanelCoctelesYTapas(Ticket ticket) throws IOException {
         panel=new JPanel();
         panel.setLayout(new GridLayout(4,3));
         botones=new ArrayList<>();
         rellenaBotonesDeFichero();
+        this.ticket=ticket;
         for (BotonCoctelesYTapas b:botones) {
             panel.add(b.getBoton());
+            b.getBoton().addActionListener(e -> ticket.anaydeTicket(b.getNombre(), b.getCantidad()));
         }
     }
 
@@ -44,18 +47,18 @@ public class PanelCoctelesYTapas {
         BotonTotal boton=new BotonTotal();
         ventana.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        PanelCoctelesYTapas cocteles=new PanelCoctelesYTapas();
+        PanelCoctelesYTapas cocteles=new PanelCoctelesYTapas(ticket);
 
         ventana.add(cocteles.getPanel());
         ventana.setLayout(new GridLayout(1,2));
 
         //Botón de total
-        JPanel panelBoton=new JPanel(new BorderLayout());
-        panelBoton.add(boton.getPanel(), BorderLayout.SOUTH);
-        ventana.add(panelBoton);
+        JPanel panelBotonYTicket=new JPanel(new BorderLayout());
+        panelBotonYTicket.add(boton.getPanel(), BorderLayout.SOUTH);
+        ventana.add(panelBotonYTicket);
 
         //Añadir el panel del ticket
-        panelBoton.add(ticket.getPanel());
+        panelBotonYTicket.add(ticket.getPanel());
 
         ventana.pack();
         ventana.setLocationRelativeTo(null);
