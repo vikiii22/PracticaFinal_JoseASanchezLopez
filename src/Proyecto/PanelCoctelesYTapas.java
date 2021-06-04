@@ -31,7 +31,7 @@ public class PanelCoctelesYTapas {
         List<String>lineas= Files.readAllLines(Paths.get("coctelesYTapas.csv"));
         for (String s:lineas) {
             String[] campos=s.split(":");
-            BotonCoctelesYTapas nuevo=new BotonCoctelesYTapas(campos[0], Integer.parseInt(campos[1]));
+            BotonCoctelesYTapas nuevo=new BotonCoctelesYTapas(campos[0], Integer.parseInt(campos[1]), campos[2]);
             botones.add(nuevo);
         }
     }

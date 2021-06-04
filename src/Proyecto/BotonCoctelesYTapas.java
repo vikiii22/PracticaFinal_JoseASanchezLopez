@@ -25,8 +25,9 @@ public class BotonCoctelesYTapas {
         return cantidad;
     }
 
-    public BotonCoctelesYTapas(String nombre, int cantidad){
+    public BotonCoctelesYTapas(String nombre, int cantidad, String link){
         boton=new JButton(nombre);
+        boton.setIcon(new ImageIcon(link));
         this.nombre=nombre;
         this.cantidad=cantidad;
 

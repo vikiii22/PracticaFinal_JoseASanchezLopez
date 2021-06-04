@@ -27,7 +27,7 @@ public class BotonTotal {
         ventana.add(imprimeTicket);
         total.addActionListener(e -> System.out.println(total.getText()+" es: "));
         imprimeTicket.addActionListener(e -> {
-            imprimir.imprimirTicket("ejemplo.pdf");
+            imprimir.imprimirTicket("Mis tickets");
         });
     }
     public JPanel getPanel(){
