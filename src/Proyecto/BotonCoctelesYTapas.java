@@ -33,7 +33,6 @@ public class BotonCoctelesYTapas {
         int precio=cantidad;
         //boton.addActionListener(e-> System.out.println(nombre + " " +cantidad));
         boton.addActionListener(e -> {
-            System.out.println("Ha pedido " + nombre);
             ticket.anaydeTicket(nombre, cantidad);
         });
         //boton.addActionListener(e -> ticket.texto.setText(nombre +""+cantidad));

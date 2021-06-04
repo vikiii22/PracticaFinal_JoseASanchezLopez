@@ -44,7 +44,5 @@ public class Ticket extends JFrame{
             salida+=tapas.getKey()+": "+tapas.getValue()+"€\n";
         }
         texto.setText(salida);
-        //Aquí imprimo la salida para ver si está funcionando
-        System.out.println(salida);
     }
 }
