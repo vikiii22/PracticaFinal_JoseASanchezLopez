@@ -1,10 +1,7 @@
 package Proyecto;
 
 import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -23,7 +20,7 @@ public class PanelCoctelesYTapas {
         this.ticket=ticket;
         for (BotonCoctelesYTapas b:botones) {
             panel.add(b.getBoton());
-            b.getBoton().addActionListener(e -> ticket.anaydeTicket(b.getNombre(), b.getCantidad()));
+            b.getBoton().addActionListener(e -> ticket.anaydeTicket(b.getNombre(), b.getPrecio()));
         }
     }
 

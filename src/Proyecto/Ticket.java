@@ -29,20 +29,22 @@ public class Ticket extends JFrame{
         return panel;
     }
 
-    public void anaydeTicket(String nombre, int cantidad) {
+    public void anaydeTicket(String nombre, int precio) {
         if (!tickets.containsKey(nombre)){
-            tickets.put(nombre, cantidad);
+            tickets.put(nombre, precio);
         }else {
-            tickets.put(nombre,tickets.get(nombre)+cantidad);
+            tickets.put(nombre,tickets.get(nombre)+precio);
         }
         actualizar();
     }
 
     private void actualizar() {
         String salida=" ";
+        int total=0;
         for (Map.Entry<String, Integer>tapas:tickets.entrySet()) {
             salida+=tapas.getKey()+": "+tapas.getValue()+"€\n";
+            total+=tapas.getValue();
         }
-        texto.setText(salida);
+        texto.setText(salida+"\n\n\n-----------------\nTotal: "+total+"€");
     }
 }

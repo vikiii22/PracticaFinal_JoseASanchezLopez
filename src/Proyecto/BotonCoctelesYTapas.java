@@ -1,10 +1,6 @@
 package Proyecto;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class BotonCoctelesYTapas {
     Ticket ticket=new Ticket();
@@ -15,27 +11,27 @@ public class BotonCoctelesYTapas {
 
     private final String nombre;
     private JButton boton;
-    private final int cantidad;
+    private final int precio;
 
     public String getNombre() {
         return nombre;
     }
 
-    public int getCantidad() {
-        return cantidad;
+    public int getPrecio() {
+        return precio;
     }
 
-    public BotonCoctelesYTapas(String nombre, int cantidad, String link){
+    public BotonCoctelesYTapas(String nombre, int precio, String link){
         boton=new JButton(nombre);
         boton.setIcon(new ImageIcon(link));
         this.nombre=nombre;
-        this.cantidad=cantidad;
+        this.precio =precio;
 
-        int precio=cantidad;
-        //boton.addActionListener(e-> System.out.println(nombre + " " +cantidad));
+        //int cantidad=precio;
+        //boton.addActionListener(e-> System.out.println(nombre + " " +precio));
         boton.addActionListener(e -> {
-            ticket.anaydeTicket(nombre, cantidad);
+            ticket.anaydeTicket(nombre, precio);
         });
-        //boton.addActionListener(e -> ticket.texto.setText(nombre +""+cantidad));
+        //boton.addActionListener(e -> ticket.texto.setText(nombre +""+precio));
     }
 }

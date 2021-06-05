@@ -25,7 +25,11 @@ public class BotonTotal {
 
         ventana.add(total);
         ventana.add(imprimeTicket);
-        total.addActionListener(e -> System.out.println(total.getText()+" es: "));
+        total.addActionListener(e -> {
+            Ticket ticket=new Ticket();
+
+        });
+
         imprimeTicket.addActionListener(e -> {
             imprimir.imprimirTicket("Mis tickets");
         });
