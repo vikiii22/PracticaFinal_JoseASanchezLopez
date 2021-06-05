@@ -1,6 +1,8 @@
 package Proyecto;
 
 import javax.swing.*;
+import java.awt.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class BotonCoctelesYTapas {
     Ticket ticket=new Ticket();
@@ -22,15 +24,17 @@ public class BotonCoctelesYTapas {
     }
 
     public BotonCoctelesYTapas(String nombre, int precio, String link){
-        boton=new JButton(nombre);
+        boton=new JButton();
         boton.setIcon(new ImageIcon(link));
+        boton.setMaximumSize(new Dimension(20,20));
         this.nombre=nombre;
         this.precio =precio;
-
+        AtomicInteger cantidad= new AtomicInteger();
         //int cantidad=precio;
         //boton.addActionListener(e-> System.out.println(nombre + " " +precio));
         boton.addActionListener(e -> {
             ticket.anaydeTicket(nombre, precio);
+            cantidad.getAndIncrement();
         });
         //boton.addActionListener(e -> ticket.texto.setText(nombre +""+precio));
     }

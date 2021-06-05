@@ -25,16 +25,19 @@ public class BotonTotal {
 
         ventana.add(total);
         ventana.add(imprimeTicket);
-        total.addActionListener(e -> {
-            Ticket ticket=new Ticket();
-
-        });
-
         imprimeTicket.addActionListener(e -> {
             imprimir.imprimirTicket("Mis tickets");
         });
     }
     public JPanel getPanel(){
         return ventana;
+    }
+
+    public void ensenyaTotal(String nombre, int precio){
+        Ticket ticket=new Ticket();
+        ticket.anaydeTicket(nombre, precio);
+        int totalAPagar=0;
+        totalAPagar+=precio;
+        JOptionPane.showMessageDialog(null, "El total a pagar es: "+totalAPagar+"€");
     }
 }
