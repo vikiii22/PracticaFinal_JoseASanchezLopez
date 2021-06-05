@@ -29,12 +29,11 @@ public class BotonCoctelesYTapas {
         boton.setMaximumSize(new Dimension(20,20));
         this.nombre=nombre;
         this.precio =precio;
-        AtomicInteger cantidad= new AtomicInteger();
+
         //int cantidad=precio;
         //boton.addActionListener(e-> System.out.println(nombre + " " +precio));
         boton.addActionListener(e -> {
             ticket.anaydeTicket(nombre, precio);
-            cantidad.getAndIncrement();
         });
         //boton.addActionListener(e -> ticket.texto.setText(nombre +""+precio));
     }

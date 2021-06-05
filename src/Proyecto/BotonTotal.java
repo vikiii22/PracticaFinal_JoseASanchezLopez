@@ -8,6 +8,7 @@ public class BotonTotal {
     JButton total;
     JButton imprimeTicket;
     ImrpimeTicket imprimir;
+    Ticket ticket;
     public BotonTotal(){
         ventana=new JPanel();
         total=new JButton("TOTAL");
@@ -17,6 +18,7 @@ public class BotonTotal {
         total.setFont(fuente);
         total.setBackground(Color.GRAY);
         imprimir=new ImrpimeTicket();
+        ticket=new Ticket();
 
         imprimeTicket=new JButton("Imprime ticket");
         imprimeTicket.setPreferredSize(new Dimension(300,70));
@@ -24,6 +26,10 @@ public class BotonTotal {
         imprimeTicket.setBackground(Color.GRAY);
 
         ventana.add(total);
+        total.addActionListener(e -> {
+            Ticket ticket=new Ticket();
+            ticket.ensenyaTotal();
+        });
         ventana.add(imprimeTicket);
         imprimeTicket.addActionListener(e -> {
             imprimir.imprimirTicket("Mis tickets");
@@ -33,11 +39,5 @@ public class BotonTotal {
         return ventana;
     }
 
-    public void ensenyaTotal(String nombre, int precio){
-        Ticket ticket=new Ticket();
-        ticket.anaydeTicket(nombre, precio);
-        int totalAPagar=0;
-        totalAPagar+=precio;
-        JOptionPane.showMessageDialog(null, "El total a pagar es: "+totalAPagar+"€");
-    }
+
 }

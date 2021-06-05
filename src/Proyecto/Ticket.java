@@ -47,4 +47,13 @@ public class Ticket extends JFrame{
         }
         texto.setText(salida+"\n\n\n-----------------\nTotal: "+total+"€");
     }
+
+    public void ensenyaTotal(){
+        String totalAPagar="";
+        for(Map.Entry<String, Integer>total: tickets.entrySet()){
+            totalAPagar+=total.getKey();
+        }
+        System.out.println(totalAPagar);
+        JOptionPane.showMessageDialog(null, "El total a pagar es: "+totalAPagar+"€");
+    }
 }
