@@ -26,10 +26,6 @@ public class BotonTotal {
         imprimeTicket.setBackground(Color.GRAY);
 
         ventana.add(total);
-        total.addActionListener(e -> {
-            Ticket ticket=new Ticket();
-            ticket.ensenyaTotal();
-        });
         ventana.add(imprimeTicket);
         imprimeTicket.addActionListener(e -> {
             imprimir.imprimirTicket("Mis tickets");
@@ -39,5 +35,7 @@ public class BotonTotal {
         return ventana;
     }
 
-
+    public JButton getTotal() {
+        return total;
+    }
 }
