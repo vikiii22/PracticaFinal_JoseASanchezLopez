@@ -18,7 +18,6 @@ public class Ticket extends JFrame{
         texto.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         this.panel.add(texto);
         tickets=new TreeMap<>();
-        //Ticket t=new Ticket();
     }
 
     public JTextArea getTexto(){
