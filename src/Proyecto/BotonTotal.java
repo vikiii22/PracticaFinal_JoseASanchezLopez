@@ -4,11 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BotonTotal {
-    JPanel ventana;
-    JButton total;
-    JButton imprimeTicket;
-    ImrpimeTicket imprimir;
-    Ticket ticket;
+    public JPanel ventana;
+    public JButton total;
+    public JButton imprimeTicket;
+    public ImrpimeTicket imprimir;
+    public Ticket ticket;
     public BotonTotal(){
         ventana=new JPanel();
         total=new JButton("TOTAL");

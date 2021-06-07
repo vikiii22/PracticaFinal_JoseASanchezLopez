@@ -11,7 +11,7 @@ import java.util.List;
 public class PanelCoctelesYTapas {
     public final JPanel panel;
     List<BotonCoctelesYTapas> botones;
-    Ticket ticket;
+    public Ticket ticket;
     PanelCoctelesYTapas(Ticket ticket) throws IOException {
         panel=new JPanel();
         panel.setLayout(new GridLayout(4,3));
