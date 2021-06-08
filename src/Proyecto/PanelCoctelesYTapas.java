@@ -53,7 +53,8 @@ public class PanelCoctelesYTapas {
         JPanel panelBotonYTicket=new JPanel(new BorderLayout());
         panelBotonYTicket.add(boton.getPanel(), BorderLayout.SOUTH);
         boton.getTotal().addActionListener(e -> {
-            JOptionPane.showMessageDialog(null, "Total a pagar: "+ticket.ensenyaTotal()+"€");
+            JOptionPane.showMessageDialog(null, "<html><h1>Ticket</h1>"+ticket.salidaTicket()+
+                    "<html><hr><br><h1>Total a pagar: "+ticket.ensenyaTotal()+"€</h1>");
             ESHtml.escribeHTML(ticket.ensenyaTotal());
         });
         ventana.add(panelBotonYTicket);

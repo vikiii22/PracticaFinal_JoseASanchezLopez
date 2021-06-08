@@ -54,4 +54,14 @@ public class Ticket extends JFrame{
         }
         return totalAPagar;
     }
+
+    public String salidaTicket(){
+        String salida=" ";
+        int total=0;
+        for (Map.Entry<String, Integer>tapas:tickets.entrySet()) {
+            salida+=tapas.getKey()+": "+tapas.getValue()+"€\n";
+            total+=tapas.getValue();
+    }
+        return salida;
+}
 }
