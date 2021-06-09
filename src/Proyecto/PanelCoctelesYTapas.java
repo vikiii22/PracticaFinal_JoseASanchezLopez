@@ -8,10 +8,22 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase principal
+ * @author Jose
+ * @Version 1.0
+ */
+
 public class PanelCoctelesYTapas {
     public final JPanel panel;
     List<BotonCoctelesYTapas> botones;
     public Ticket ticket;
+
+    /**
+     * Constructor panel principal
+     * @param ticket
+     * @throws IOException
+     */
     PanelCoctelesYTapas(Ticket ticket) throws IOException {
         panel=new JPanel();
         panel.setLayout(new GridLayout(4,3));
@@ -24,6 +36,10 @@ public class PanelCoctelesYTapas {
         }
     }
 
+    /**
+     * Método que rellena los botones automáticamente desde el fichero.csv
+     * @throws IOException
+     */
     private void rellenaBotonesDeFichero() throws IOException {
         List<String>lineas= Files.readAllLines(Paths.get("coctelesYTapas.csv"));
         for (String s:lineas) {
@@ -33,7 +49,10 @@ public class PanelCoctelesYTapas {
         }
     }
 
-
+    /**
+     * Método que obtiene el panel
+     * @return panel
+     */
     public JPanel getPanel(){
         return panel;
     }
@@ -53,7 +72,7 @@ public class PanelCoctelesYTapas {
         JPanel panelBotonYTicket=new JPanel(new BorderLayout());
         panelBotonYTicket.add(boton.getPanel(), BorderLayout.SOUTH);
         boton.getTotal().addActionListener(e -> {
-            JOptionPane.showMessageDialog(null, "<html><h1>Ticket</h1>"+ticket.salidaTicket()+
+            JOptionPane.showMessageDialog(null, "<html><h1>Miami Beach Ticket</h1>"+ticket.salidaTicket()+
                     "<html><hr><br><h1>Total a pagar: "+ticket.ensenyaTotal()+"€</h1>");
             ESHtml.escribeHTML(ticket.ensenyaTotal());
         });

@@ -3,12 +3,20 @@ package Proyecto;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * @author Jose
+ * @version 1.0
+ */
 public class BotonTotal {
     public JPanel ventana;
     public JButton total;
     public JButton imprimeTicket;
     public ImrpimeTicket imprimir;
     public Ticket ticket;
+
+    /**
+     * Método del contrustor botón total e imprime ticket
+     */
     public BotonTotal(){
         ventana=new JPanel();
         total=new JButton("TOTAL");
@@ -31,10 +39,19 @@ public class BotonTotal {
             imprimir.imprimirTicket("Mis tickets");
         });
     }
+
+    /**
+     * Método que obtiene el panel
+     * @return ventana
+     */
     public JPanel getPanel(){
         return ventana;
     }
 
+    /**
+     * Método que obtiene el total
+     * @return total
+     */
     public JButton getTotal() {
         return total;
     }

@@ -7,6 +7,11 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+/**
+ * Clase que hace una saldia en HTML
+ * @author Jose
+ * @version 1.0
+ */
 public class ESHtml {
     public static void escribeHTML(int total){
         String salida="<html><head><meta charset=\"UTF-8\"><link rel=\"stylesheet\" type=\"text/css\" href=\"estilo.css\" media=\"screen\"/></head>";
